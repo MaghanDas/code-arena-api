@@ -19,13 +19,8 @@ return [
     'paths' => ['api/*', 'sanctum/csrf-cookie'],
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => [env('FRONTEND_URL', 'http://localhost:3000')],
-//     'allowed_origins' => [
-//     'http://localhost:5173',
-//     // 'https://your-vercel-app.vercel.app', // add after deploy
-// ],
-// 'allowed_origins' => explode(',', env('FRONTEND_URL', 'https://localhost:5173')),  
-   'allowed_origins_patterns' => [],
+    'allowed_origins' => array_values(array_filter(array_map('trim', explode(',', env('FRONTEND_URLS', env('FRONTEND_URL', 'http://localhost:5173')))))),
+    'allowed_origins_patterns' => array_values(array_filter(array_map('trim', explode(',', env('FRONTEND_URL_PATTERNS', ''))))),
 
     'allowed_headers' => ['*'],
 

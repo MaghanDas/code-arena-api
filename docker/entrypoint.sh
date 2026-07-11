@@ -1,9 +1,3 @@
-# #!/bin/sh
-# set -e
-
-# service nginx start
-# exec "$@"
-#!/bin/sh
 #!/bin/sh
 set -e
 

@@ -50,7 +50,9 @@ RUN chown -R www-data:www-data /var/www \
     && chmod +x /usr/local/bin/entrypoint.sh \
     && chmod -R 775 storage bootstrap/cache
 
-EXPOSE 8080
+# EXPOSE 8080
 
+# ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
+# CMD ["php-fpm"]
+EXPOSE 8080
 ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
-CMD ["php-fpm"]
